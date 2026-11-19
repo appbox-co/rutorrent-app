@@ -29,7 +29,7 @@ echo "== PHP packages"
 # The php7.2 build this release ships. Change it together with
 # PHP72_SOURCE_VERSION/PHP72_LOCAL_SUFFIX in the Dockerfile and
 # release/expected-packages.txt.
-expected_php72_version=7.2.24-0ubuntu0.18.04.17+cylo2
+expected_php72_version=7.2.24-0ubuntu0.18.04.17+cylo3
 fpm_version=$(docker run --rm --network none --entrypoint php-fpm7.2 "$image_ref" -v | head -1)
 echo "$fpm_version"
 case "$fpm_version" in

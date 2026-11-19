@@ -195,11 +195,8 @@ if [[ ! -f /etc/app_configured ]]; then
     fi
 fi
 
-if [ -d /torrents/config/rtorrent/.session/ ]; then
-  echo "Session directory found, moving to new location..."
-  mv /torrents/config/rtorrent/.session/* /torrents/config/rtorrent/session/
-  rm -rf /torrents/config/rtorrent/.session
-fi
+# Keep the session when the instance comes from an old image or ruTorrent 5.
+/scripts/session-layout.sh /torrents/config/rtorrent
 
 if [[ ! -f /torrents/config/rutorrent/users/${RUTORRENT_USER}/settings/theme.dat ]]
     then

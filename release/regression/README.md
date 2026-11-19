@@ -14,5 +14,8 @@ FastCGI requests to it the way nginx does.
 | --- | --- |
 | `cve-2026-109618-oom.sh` | `0001-CVE-2026-109618-109619.patch` (out-of-memory handling, multipart headers) |
 | `cve-2026-109619-state.sh` | `0001-CVE-2026-109618-109619.patch` (state reset, session upload progress) |
+| `cve-2026-129289-fpm-smuggling.sh` | `0002-CVE-2026-11-19-php-src.patch` (unread body drained, partial STDIN record not parsed as a request) |
+| `cve-2026-128064-https-scheme.sh` | `0002-CVE-2026-11-19-php-src.patch` (HTTPS:// and httpS:// use TLS) |
+| `cve-2026-128090-phar-pubkey.sh` | `0002-CVE-2026-11-19-php-src.patch` (keyless phar signature refused next to a .pubkey) |
 | `nginx-auth.sh` | `sources/nginx-site.conf` (PHP scripts require the ruTorrent login) |
 | `session-layout.sh` | `scripts/session-layout.sh` (switching from ruTorrent 5 keeps the rTorrent session) |

@@ -15,3 +15,4 @@ FastCGI requests to it the way nginx does.
 | `cve-2026-109618-oom.sh` | `0001-CVE-2026-109618-109619.patch` (out-of-memory handling, multipart headers) |
 | `cve-2026-109619-state.sh` | `0001-CVE-2026-109618-109619.patch` (state reset, session upload progress) |
 | `nginx-auth.sh` | `sources/nginx-site.conf` (PHP scripts require the ruTorrent login) |
+| `session-layout.sh` | `scripts/session-layout.sh` (switching from ruTorrent 5 keeps the rTorrent session) |

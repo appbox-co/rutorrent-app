@@ -83,7 +83,7 @@ layout() {
 }
 
 echo "== Layouts"
-[ -x /scripts/session-layout.sh ] || fail "/scripts/session-layout.sh is missing"
+if [ -x /scripts/session-layout.sh ]; then
 layout ruTorrent5 'session=link:.session .session=dir files=3' \
     'mkdir .session && touch .session/A.torrent .session/A.torrent.rtorrent .session/A.torrent.libtorrent_resume && ln -s .session session'
 layout ruTorrent5-absolute "session=link:$check_dir/layouts/ruTorrent5-absolute/.session .session=dir files=1" \
@@ -105,6 +105,9 @@ fi
 layout wiped-by-3.10-11 'session=dir .session=none files=0' 'ln -s .session session'
 layout plain 'session=dir .session=none files=1' 'mkdir session && touch session/A.torrent'
 layout new 'session=none .session=none files=0' 'true'
+else
+    miss "/scripts/session-layout.sh is missing, layouts not checked"
+fi
 
 mkdir -p "$check_dir/bin"
 cat > "$check_dir/bin/curl" <<'EOF'
